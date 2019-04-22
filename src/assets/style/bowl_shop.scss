@@ -1,0 +1,79 @@
+  @import url('https://fonts.googleapis.com/css?family=Lora|Montserrat');
+$font-head:'Montserrat',
+sans-serif;
+$font-main:'Lora',
+serif;
+$color-main:rgba(50, 104, 255, 0.6);
+$color-accent:rgb(68, 0, 0);
+
+%reset {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin h-w($h, $w) {
+    width: $w;
+    height: $h;
+}
+
+@mixin flex($display, $direction, $wrap, $justify, $align) {
+    display: $display;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+body,
+html,
+#app {
+  margin:0;
+  padding:0;
+    overflow-x:hidden;
+    font-family: $font-main;
+    @extend %reset;
+    //important
+    @include h-w(100%, 100%);
+    letter-spacing: .15em;
+}
+template {
+  @include h-w(100%, 100%);
+}
+
+h1,
+h2 {
+    font-family: $font-head;
+    text-align: center;
+}
+
+h3 {
+    font-family: $font-main;
+    text-align: center;
+    font-weight: 1;
+}
+a {
+    text-decoration: none;
+    padding: 0.5em;
+  }
+  a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background:$color-accent;
+  }
+  ::-webkit-scrollbar-track {
+      background:#fff;
+  }
+  .banner {
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #444;
+    @include h-w(60vh, 100%);
+   
+  }
+ 
